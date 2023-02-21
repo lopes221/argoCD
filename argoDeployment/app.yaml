@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/soaand01/devops-argocd.git
+    repoURL: https://github.com/lopes221/argoCD.git
     targetRevision: HEAD
     path: nginx/
     directory:
