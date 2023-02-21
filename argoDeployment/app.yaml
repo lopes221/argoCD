@@ -4,7 +4,7 @@ metadata:
   name: nginx
   namespace: argocd
 spec:
-  project: default
+  project: devoteam-demo
   source:
     repoURL: https://github.com/lopes221/argoCD.git
     targetRevision: HEAD

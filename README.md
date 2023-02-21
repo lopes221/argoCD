@@ -1,26 +1,37 @@
-# argoCD deployment
+<h1 align="center">
+  <br>
+<img src="docs/images/dev_logo_rvb.png"  alt="accessibility text">
+  <br>
+  ArgoCD demo
+  <br>
+</h1>
 
-## Deployment steps
-https://argo-cd.readthedocs.io/en/stable/getting_started/
+Simple demonstration of ArgoCD on AKS.
 
-## Create namespace
+# Get Started
+
+
+```
+#Create namespace
 kubectl create namespace argocd
+```
 
-## Apply manifests
+```
+# Deploy ArgoCD
 kubectl apply -f argoDeployment/install.yaml -n argocd
+```
 
-## Get Login credential
+```
+# Get ArgoCD secret for user admin login
  kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath='{.data.*}' | base64 -d
+```
 
-## Apply argoCD application
-kubectl apply -f argoDeployment/app.yaml
+```
+# Deploy an ArgoCD app
+kubectl apply -f argoDeployment/app.yaml -n argocd
+```
 
-<!-- 
-Install nginx-ingress ( In case of ingress to be used )
-
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-
-helm repo update 
-
-helm install -n nginx-controller nginx-controller ingress-nginx/ingress-nginx --set controller.service.annotations."service\.beta\.kubernetes\.io azure-load-balancer-health-probe-request-path"=/healthz  -->
-
+```
+#Create namespace
+kubectl create namespace argocd
+```
