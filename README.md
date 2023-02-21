@@ -6,7 +6,22 @@
   <br>
 </h1>
 
-Simple demonstration of ArgoCD on AKS.
+Simple demo of Nginx where we will be covering a nginx deployment.
+
+```
+argoCD/
+├── README.md
+├── argoDeployment
+│   ├── app.yaml
+│   └── install.yaml
+└── nginx
+    ├── deployment
+    │   └── nginx-deployment.yaml
+    ├── namespace
+    │   └── namespace.yaml
+    └── service
+        └── nginx-service.yaml
+```
 
 # Get Started
 
@@ -17,17 +32,17 @@ kubectl create namespace argocd
 ```
 
 ```
-# Deploy ArgoCD
+#Deploy ArgoCD
 kubectl apply -f argoDeployment/install.yaml -n argocd
 ```
 
 ```
-# Get ArgoCD secret for user admin login
+#Get ArgoCD secret for user admin login
  kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath='{.data.*}' | base64 -d
 ```
 
 ```
-# Deploy an ArgoCD app
+#Deploy an ArgoCD app
 kubectl apply -f argoDeployment/app.yaml -n argocd
 ```
 
@@ -35,3 +50,14 @@ kubectl apply -f argoDeployment/app.yaml -n argocd
 #Create namespace
 kubectl create namespace argocd
 ```
+
+# References
+-   https://argo-cd.readthedocs.io/en/stable/getting_started/
+
+
+## Author
+
+Anderson Soares Lopes
+
+[![GitHub](https://skillicons.dev/icons?i=github)](https://github.com/lopes221)
+[![Linkedin](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/andersonsoaresl/)
