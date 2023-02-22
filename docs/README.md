@@ -4,8 +4,4 @@
   <br>
 </h1>
 
-## Here you will find the presentation docs
-
-- [Home](../README.md)
-- [IaC](../iac/)
-- [Minikube](../minikube/)
+## Images and doc contents
